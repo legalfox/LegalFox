@@ -86,6 +86,13 @@
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Logout.aspx.designer.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="modelo-v2.aspx.designer.vb">
       <DependentUpon>modelo-v2.aspx</DependentUpon>
     </Compile>
@@ -5818,6 +5825,7 @@
     <Content Include="imgs\legal-fox-logo-small.jpg" />
     <Content Include="imgs\legal-fox-logo.fw.png" />
     <Content Include="login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="modelo-v2.aspx" />
     <Content Include="obj\Debug\build.force" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
