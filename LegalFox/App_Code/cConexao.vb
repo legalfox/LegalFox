@@ -40,7 +40,7 @@ Public Class CConexao
 
     Public ReadOnly Property objConn() As SqlConnection
         Get
-            'Retorna o Status da conexao
+            'Retorna o Status da conexao ativa
             Return _objConn
         End Get
     End Property
