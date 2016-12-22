@@ -107,7 +107,7 @@ Public Class cFuncao
         Try
 
 
-            'Dim img As Bitmap
+            'Dim img As Bitmap teste
             Dim h, w As Integer
 
             'img = CType(Bitmap.FromFile(pArquivoGrande), Bitmap)

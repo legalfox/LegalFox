@@ -74,6 +74,7 @@
     <Content Include="App_Code\cFuncao.vb" />
     <Content Include="App_Code\cLogs.vb" />
     <Content Include="App_Code\cMenus.vb" />
+    <Content Include="App_Code\cUsuarios.vb" />
     <Compile Include="categorias.aspx.designer.vb">
       <DependentUpon>categorias.aspx</DependentUpon>
     </Compile>
