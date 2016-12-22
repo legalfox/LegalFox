@@ -80,10 +80,10 @@ Public Class cFuncao
             mail.Body = email_body
             mail.IsBodyHtml = True
 
-            'add an attachment from the filesystem
+            'add an attachment from the filesystem.s
             If caminho_arquivo <> "" Then mail.Attachments.Add(New Attachment(caminho_arquivo))
 
-            'send the message
+            'send the messages
             Dim smtp As New SmtpClient()
             With smtp
                 .EnableSsl = False
