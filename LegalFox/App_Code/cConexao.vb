@@ -26,7 +26,7 @@ Public Class CConexao
 
     End Function
 
-    Public Sub Desconectar() 'matando todos objetos usados
+    Public Sub Desconectar() 'matando todos objetos que o Evandro criou
         _objConn.Close()
         _objConn = Nothing
     End Sub
