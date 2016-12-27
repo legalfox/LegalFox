@@ -16,12 +16,20 @@ Public Class cMenus
         Dim ln_menu As Data.DataRow
         Dim Conteudo As String = ""
 
-        'Seleciona todos os menus
-        dt_menu = obj.ExecutarBusca(sql_menu(_pai))
+            'Seleciona todos os menus
+            dt_menu = obj.ExecutarBusca(sql_menu())
 
-        For Each ln_menu In dt_menu.Rows
-            Conteudo += "<li class='list-group-item'><a href='/categoria/" & ln_menu.Item("URL").ToString & "'><svg class='icon " & ln_menu.Item("ICONE").ToString & " glyph fs1'><use xlink:href='#" & ln_menu.Item("ICONE").ToString & "'></use></svg>" & ln_menu.Item("DESCRICAO").ToString & "</a></li>"
-        Next
+            Conteudo += "<div class='hor-menu'> "
+            Conteudo += "<ul class='nav navbar-nav'> "
+
+            For Each ln_menu In dt_menu.Rows
+                Conteudo += "<li aria-haspopup='true' class='menu-dropdown classic-menu-dropdown active'> "
+                Conteudo += "<a href='javascript:;'> " & ln_menu.Item("menu_label") & " <span class='arrow'></span> </a> "
+                Conteudo += "<ul class='dropdown-menu pull-left'> "
+
+                Conteudo += "</ul>"
+                'Conteudo += " < li Class='list-group-item'><a href='/categoria/" & ln_menu.Item("URL").ToString & "'><svg class='icon " & ln_menu.Item("ICONE").ToString & " glyph fs1'><use xlink:href='#" & ln_menu.Item("ICONE").ToString & "'></use></svg>" & ln_menu.Item("DESCRICAO").ToString & "</a></li>"
+            Next
 
 
             Return Conteudo
@@ -33,87 +41,8 @@ Public Class cMenus
     End Function
 
 
-    Public Shared Function MontaMenuRuas() As String
-        Dim obj As New cControle
-        Dim dt_menu As Data.DataTable
-        Dim ln_menu As Data.DataRow
-        Dim Conteudo As String = ""
-
-        'Seleciona todos os menus
-        dt_menu = obj.ExecutarBusca(sql_menu_ruas())
-
-        For Each ln_menu In dt_menu.Rows
-            Conteudo += "<li class='list-group-item'><a href='/rua/" & cFuncao.FormatarURL(ln_menu.Item("ENDERECO").ToString) & "'>" & ln_menu.Item("ENDERECO").ToString & "</a></li>"
-        Next
-
-
-        Return Conteudo
+    Public Shared Function sql_menu(_escritorio_id As String) As String
+        Return "SELECT escritorio_id, menu_id, menu_label FROM [legalfox_prd].[dbo].[lf_menus] WHERE escritorio_id = " & _escritorio_id & " AND STATUS = 'A' ORDER BY SEQ"
     End Function
 
-
-
-
-    Public Shared Function sql_menu(_pai As Integer) As String
-        Return "SELECT * FROM ruaseloj_usr1.CATEGORIAS WHERE CATEGORIA_PAI = " & _pai & " AND STATUS = 'A' ORDER BY SEQ"
-    End Function
-
-    Public Shared Function sql_menu_ruas() As String
-        Return "SELECT COUNT(LOJA_ID) TOTAL, ENDERECO FROM LOJAS WHERE STATUS = 'A' GROUP BY ENDERECO ORDER BY 1 DESC"
-    End Function
-
-    Public Shared Sub CabecalhoDetalhe(pTipo As String, idTipo As String, ByRef tituloPagina As Label, ByRef Bread As Label)
-        Dim obj As New cControle
-        Dim dt_result As Data.DataTable
-        Dim ln_result As Data.DataRow
-        Dim Conteudo As String = ""
-        Dim _sql As String = ""
-
-        Try
-
-            Select Case pTipo
-                Case "Categoria"
-                    _sql = "SELECT DESCRICAO, ICONE FROM ruaseloj_usr1.CATEGORIAS WHERE CATEGORIA_ID = " & idTipo & " AND STATUS = 'A' ORDER BY SEQ "
-
-                    'Seleciona todos os menus
-                    dt_result = obj.ExecutarBusca(_sql)
-                    For Each ln_result In dt_result.Rows
-                        tituloPagina.Text = ln_result.Item("DESCRICAO").ToString
-                        Bread.Text = tituloPagina.Text
-                    Next
-
-                Case "Ruas"
-                    _sql = "SELECT RUA FROM ruaseloj_usr1.RUAS WHERE URL = '" & idTipo & "'"
-
-                    'Seleciona todos os menus
-                    dt_result = obj.ExecutarBusca(_sql)
-                    For Each ln_result In dt_result.Rows
-                        tituloPagina.Text = ln_result.Item("RUA").ToString
-                        Bread.Text = tituloPagina.Text
-                    Next
-                Case "Pesquisa"
-
-                    tituloPagina.Text = "Pesquisa"
-                    Bread.Text = "Resultado para a palavra: " & idTipo
-
-                Case "Contato"
-
-                    tituloPagina.Text = "Contato"
-                    Bread.Text = tituloPagina.Text
-
-                Case "anuncie-gratis"
-
-                    tituloPagina.Text = "Anuncie grátis"
-                    Bread.Text = tituloPagina.Text
-
-
-            End Select
-
-
-
-
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
 End Class
