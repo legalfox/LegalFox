@@ -62,7 +62,7 @@ Public Class cMenus
     End Function
 
     Public Shared Function sql_pagina(_escritorio_id As String, _menu_id As String) As String
-        Return "SELECT pagina_id, pagina_label, icone FROM [legalfox_prd].[dbo].[lf_paginas] where escritorio_id = '" & _escritorio_id & "' and menu_id = '" & _menu_id & "' ORDER BY sequencia"
+        Return "SELECT pagina_id, pagina_label, icone FROM [legalfox_prd].[dbo].[lf_paginas] where escritorio_id = '" & _escritorio_id & "' and menu_id = '" & _menu_id & "' AND status = 'A' ORDER BY sequencia"
     End Function
 
 
