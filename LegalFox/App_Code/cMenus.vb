@@ -24,9 +24,13 @@ Public Class cMenus
 
             For Each ln_menu In dt_menu.Rows
                 Conteudo += "<li aria-haspopup='true' class='menu-dropdown classic-menu-dropdown active'> "
-                Conteudo += "<a href='javascript:;'> " & ln_menu.Item("menu_label") & " <span class='arrow'></span> </a> "
-                Conteudo += "<ul class='dropdown-menu pull-left'> "
-
+                Conteudo += "   <a href='javascript:;'> " & ln_menu.Item("menu_label") & " <span class='arrow'></span> </a> "
+                Conteudo += "   <ul class='dropdown-menu pull-left'> "
+                Conteudo += "       <li aria-haspopup='true' class=' active'> "
+                Conteudo += "           <a href='index.html' class='nav-link  active'> "
+                Conteudo += "               <i class='icon-bar-chart'></i> Item 1 "
+                Conteudo += "           </a> "
+                Conteudo += "       </li> "
                 Conteudo += "</ul>"
                 'Conteudo += " < li Class='list-group-item'><a href='/categoria/" & ln_menu.Item("URL").ToString & "'><svg class='icon " & ln_menu.Item("ICONE").ToString & " glyph fs1'><use xlink:href='#" & ln_menu.Item("ICONE").ToString & "'></use></svg>" & ln_menu.Item("DESCRICAO").ToString & "</a></li>"
             Next
