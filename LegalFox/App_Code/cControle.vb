@@ -21,12 +21,12 @@ Public Class cControle
             Catch ex As Exception
                 Dim stackframe As New Diagnostics.StackFrame
 
-                cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
-                                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
-                                 stackframe.GetMethod.ToString,
-                                 "SQL: " & pSql & vbCrLf & _
-                                 "Erro: " & ex.Message.ToString & vbCrLf & _
-                                 ex.StackTrace.ToString)
+                'cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
+                '                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
+                '                 stackframe.GetMethod.ToString,
+                '                 "SQL: " & pSql & vbCrLf & _
+                '                 "Erro: " & ex.Message.ToString & vbCrLf & _
+                '                 ex.StackTrace.ToString)
                 Return Nothing
             Finally
                 Desconectar()
@@ -60,12 +60,12 @@ Public Class cControle
             Catch ex As Exception
                 Dim stackframe As New Diagnostics.StackFrame
 
-                cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
-                                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
-                                 stackframe.GetMethod.ToString,
-                                 "SQL: " & pSQLInsert & vbCrLf & _
-                                 "Erro: " & ex.Message.ToString & vbCrLf & _
-                                 ex.StackTrace.ToString)
+                'cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
+                '                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
+                '                 stackframe.GetMethod.ToString,
+                '                 "SQL: " & pSQLInsert & vbCrLf & _
+                '                 "Erro: " & ex.Message.ToString & vbCrLf & _
+                '                 ex.StackTrace.ToString)
 
                 'Se ocorrer Erro, adiciono a Exception no obj de Erro e retono false
                 Return False
@@ -101,12 +101,12 @@ Public Class cControle
             Catch ex As Exception
                 Dim stackframe As New Diagnostics.StackFrame
 
-                cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
-                                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
-                                 stackframe.GetMethod.ToString,
-                                 "SQL: " & pSQLDelete & vbCrLf & _
-                                 "Erro: " & ex.Message.ToString & vbCrLf & _
-                                 ex.StackTrace.ToString)
+                'cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
+                '                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
+                '                 stackframe.GetMethod.ToString,
+                '                 "SQL: " & pSQLDelete & vbCrLf & _
+                '                 "Erro: " & ex.Message.ToString & vbCrLf & _
+                '                 ex.StackTrace.ToString)
 
                 'Se ocorrer Erro, adiciono a Exception no obj de Erro e retono false
                 Return False
@@ -141,12 +141,12 @@ Public Class cControle
             Catch ex As Exception
                 Dim stackframe As New Diagnostics.StackFrame
 
-                cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
-                                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
-                                 stackframe.GetMethod.ToString,
-                                 "SQL: " & pSQLUpdate & vbCrLf & _
-                                 "Erro: " & ex.Message.ToString & vbCrLf & _
-                                 ex.StackTrace.ToString)
+                'cLogs.InserirLog(System.Web.HttpContext.Current.Session("EMAIL_ID"),
+                '                 System.IO.Path.GetFileName(HttpContext.Current.Request.FilePath),
+                '                 stackframe.GetMethod.ToString,
+                '                 "SQL: " & pSQLUpdate & vbCrLf & _
+                '                 "Erro: " & ex.Message.ToString & vbCrLf & _
+                '                 ex.StackTrace.ToString)
 
                 'Se ocorrer Erro, adiciono a Exception no obj de Erro e retono false
                 Return False

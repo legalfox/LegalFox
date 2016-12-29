@@ -69,12 +69,9 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\cConexao.vb" />
-    <Content Include="App_Code\cControle.vb" />
-    <Content Include="App_Code\cFuncao.vb" />
-    <Content Include="App_Code\cLogs.vb" />
-    <Content Include="App_Code\cMenus.vb" />
-    <Content Include="App_Code\cUsuarios.vb" />
+    <Compile Include="App_Code\cConexao.vb" />
+    <Compile Include="App_Code\cControle.vb" />
+    <Compile Include="App_Code\cMenus.vb" />
     <Compile Include="categorias.aspx.designer.vb">
       <DependentUpon>categorias.aspx</DependentUpon>
     </Compile>
@@ -5865,6 +5862,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />

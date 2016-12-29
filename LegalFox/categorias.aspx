@@ -157,7 +157,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!-- MENU -->
                                 <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                        <asp:Literal ID="MenuLiteral" runat="server"></asp:Literal>
+<%--                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
                                             <a href="javascript:;"> Menu 1
                                                 <span class="arrow"></span>
                                             </a>
@@ -199,7 +200,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                 </div>
                                 <!-- FIM DO MENU -->

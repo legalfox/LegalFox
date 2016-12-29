@@ -1,10 +1,8 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Configuration.ConfigurationManager
-Imports System
 Imports System.IO
 Imports System.Configuration
-
 
 
 Public Class CConexao
@@ -26,7 +24,7 @@ Public Class CConexao
 
     End Function
 
-    Public Sub Desconectar() 'matando todos objetos que o Evandro mudou
+    Public Sub Desconectar() 'matando todos objetos
         _objConn.Close()
         _objConn = Nothing
     End Sub

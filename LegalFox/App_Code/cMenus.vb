@@ -7,7 +7,7 @@ Public Class cMenus
     End Function
 
 
-    Public Shared Function MontaMenu(_pai As Integer, Optional nivel As String = "") As String
+    Public Shared Function MontaMenu() As String
         Try
 
 
@@ -27,23 +27,24 @@ Public Class cMenus
             For Each ln_menu In dt_menu.Rows
                 Conteudo += "<li aria-haspopup='true' class='menu-dropdown classic-menu-dropdown active'> "
                 Conteudo += "   <a href='javascript:;'> " & ln_menu.Item("menu_label") & " <span class='arrow'></span> </a> "
+                Conteudo += "   <ul class='dropdown-menu pull-left'> "
 
                 'Seleciona as paginas do menu
                 dt_pagina = obj.ExecutarBusca(sql_pagina(HttpContext.Current.Session("ESCRITORIO_ID"), ln_menu.Item("menu_id")))
 
                 For Each ln_pagina In dt_pagina.Rows
-                    Conteudo += "   <ul class='dropdown-menu pull-left'> "
                     Conteudo += "       <li aria-haspopup='true' class=' '> "
                     Conteudo += "           <a href='" & ln_pagina.Item("pagina_id") & "' class='nav-link  '> "
                     Conteudo += "               <i class='" & ln_pagina.Item("icone") & "'></i> " & ln_pagina.Item("pagina_label") & " "
                     Conteudo += "           </a> "
                     Conteudo += "       </li> "
-                    Conteudo += "   </ul>"
                 Next
 
+                Conteudo += "   </ul>"
                 Conteudo += "</li>"
 
             Next
+
             Conteudo += "</ul>"
             Conteudo += "</div>"
 

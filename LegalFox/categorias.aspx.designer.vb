@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class categorias
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class categorias
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
+    '''<summary>
+    '''MenuLiteral control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MenuLiteral As Global.System.Web.UI.WebControls.Literal
+    
     '''<summary>
     '''frmCategorias control.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class categorias
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents frmCategorias As Global.System.Web.UI.WebControls.FormView
-
+    
     '''<summary>
     '''dsCategorias control.
     '''</summary>
